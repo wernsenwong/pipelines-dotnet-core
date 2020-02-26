@@ -13,7 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  
+
 steps:
 - task: DotNetCoreCLI@2
   inputs:
@@ -24,7 +24,7 @@ steps:
   displayName: Build
   inputs:
     command: build
-    arguments: '--configuration Release' # Update this to match your need
+    configuration: '$(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   inputs:
